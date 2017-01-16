@@ -1,0 +1,84 @@
+'use strict';
+
+const Code   = require('code');
+const Lab    = require('lab');
+const harness = require('../harness');
+
+const expect = Code.expect;
+const lab    = exports.lab = Lab.script();
+
+lab.experiment('containers - list', () => {
+
+  lab.test('default parameters', (done) => {
+
+    const scope = harness.mock()
+      .get('/containers/json')
+      .query({all: false, size: false})
+      .reply(200, []);
+
+    harness.client.containers().list().then((data) => {
+      Code.expect(scope.isDone()).to.equal(true);
+    }, (err) => {
+      Code.fail('should be a 200 response');
+    }).finally(() => {
+      harness.clean();
+      done();
+    });
+
+  });
+
+  lab.test('passing the all parameter', (done) => {
+
+    const scope = harness.mock()
+      .get('/containers/json')
+      .query({all: true, size: false})
+      .reply(200, []);
+
+    harness.client.containers().list({ all: true }).then((data) => {
+      Code.expect(scope.isDone()).to.equal(true);
+    }, (err) => {
+      Code.fail('should be a 200 response');
+    }).finally(() => {
+      harness.clean();
+      done();
+    });
+
+  });
+
+  lab.test('error - bad parameter', (done) => {
+
+    const scope = harness.mock()
+      .get('/containers/json')
+      .query({all: false, size: false})
+      .reply(400, []);
+
+    harness.client.containers().list().then((data) => {
+      Code.fail('should be a 400 response');
+    }, (err) => {
+      Code.expect(scope.isDone()).to.equal(true);
+    }).finally(() => {
+      harness.clean();
+      done();
+    });
+
+  });
+
+  lab.test('error - server error', (done) => {
+
+    const scope = harness.mock()
+      .get('/containers/json')
+      .query({all: false, size: false})
+      .reply(500, []);
+
+    harness.client.containers().list().then((data) => {
+      Code.fail('should be a 500 response');
+    }, (err) => {
+      Code.expect(scope.isDone()).to.equal(true);
+    }).finally(() => {
+      harness.clean();
+      done();
+    });
+
+  });
+
+});

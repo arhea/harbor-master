@@ -7,8 +7,13 @@
   // Define globals exposed by Node.js.
   "node": true,
 
+  "browser": false,
+
   // Allow ES6.
   "esversion": 6,
+
+  // Allow overriding Promise with Bluebird.
+  "predef": [ "-Promise" ],
 
   /*
    * ENFORCING OPTIONS

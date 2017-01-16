@@ -2,13 +2,19 @@
   "name": "harbor-master",
   "version": "1.25.0-rc1",
   "description": "Harbor Master is a Docker Remote API client written in Node",
+  "keywords": [
+    "docker",
+    "swarm",
+    "docker-remote",
+    "node-docker"
+  ],
   "main": "index.js",
   "files": [
     "lib/",
     "index.js"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "lab --timeout 1000 --assert code",
     "lint": "jshint ."
   },
   "author": "Alex Rhea <alex.rhea@gmail.com>",
@@ -24,10 +30,15 @@
     "node": ">= 6"
   },
   "dependencies": {
+    "bluebird": "^3.4.7",
+    "joi": "^10.2.0",
     "lodash": "^4.17.4",
     "request": "^2.79.0"
   },
   "devDependencies": {
-    "jshint": "^2.9.4"
+    "code": "^4.0.0",
+    "jshint": "^2.9.4",
+    "lab": "^11.2.2",
+    "nock": "^9.0.2"
   }
 }
