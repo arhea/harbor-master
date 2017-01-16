@@ -4,7 +4,6 @@ const Code   = require('code');
 const Lab    = require('lab');
 const harness = require('../harness');
 
-const expect = Code.expect;
 const lab    = exports.lab = Lab.script();
 
 lab.experiment('containers - list', () => {
@@ -16,9 +15,9 @@ lab.experiment('containers - list', () => {
       .query({all: false, size: false})
       .reply(200, []);
 
-    harness.client.containers().list().then((data) => {
+    harness.client.containers().list().then(() => {
       Code.expect(scope.isDone()).to.equal(true);
-    }, (err) => {
+    }, () => {
       Code.fail('should be a 200 response');
     }).finally(() => {
       harness.clean();
@@ -34,9 +33,9 @@ lab.experiment('containers - list', () => {
       .query({all: true, size: false})
       .reply(200, []);
 
-    harness.client.containers().list({ all: true }).then((data) => {
+    harness.client.containers().list({ all: true }).then(() => {
       Code.expect(scope.isDone()).to.equal(true);
-    }, (err) => {
+    }, () => {
       Code.fail('should be a 200 response');
     }).finally(() => {
       harness.clean();
@@ -45,16 +44,16 @@ lab.experiment('containers - list', () => {
 
   });
 
-  lab.test('error - bad parameter', (done) => {
+  lab.test('or - bad parameter', (done) => {
 
     const scope = harness.mock()
       .get('/containers/json')
       .query({all: false, size: false})
       .reply(400, []);
 
-    harness.client.containers().list().then((data) => {
+    harness.client.containers().list().then(() => {
       Code.fail('should be a 400 response');
-    }, (err) => {
+    }, () => {
       Code.expect(scope.isDone()).to.equal(true);
     }).finally(() => {
       harness.clean();
@@ -63,16 +62,16 @@ lab.experiment('containers - list', () => {
 
   });
 
-  lab.test('error - server error', (done) => {
+  lab.test('or - server or', (done) => {
 
     const scope = harness.mock()
       .get('/containers/json')
       .query({all: false, size: false})
       .reply(500, []);
 
-    harness.client.containers().list().then((data) => {
+    harness.client.containers().list().then(() => {
       Code.fail('should be a 500 response');
-    }, (err) => {
+    }, () => {
       Code.expect(scope.isDone()).to.equal(true);
     }).finally(() => {
       harness.clean();
