@@ -6,7 +6,7 @@ const harness = require('../harness');
 
 const lab    = exports.lab = Lab.script();
 
-lab.experiment('containers - list', () => {
+lab.experiment('containers - create', () => {
 
   lab.test('no parameters just body', (done) => {
 
