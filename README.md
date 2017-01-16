@@ -1,6 +1,9 @@
 # Harbor Master
 [![Build Status](https://travis-ci.org/arhea/harbor-master.svg?branch=master)](https://travis-ci.org/arhea/harbor-master)
 
+[![NPM](https://nodei.co/npm/harbor-master.png?downloads=true&downloadRank=true)](https://nodei.co/npm/harbor-master/)
+[![NPM](https://nodei.co/npm-dl/harbor-master.png?months=6&height=3)](https://nodei.co/npm/harbor-master/)
+
 Harbor Master is a Docker Remote API client written in Node. This client is meant to be a simple wrapper that makes it easy to communicate with your Docker Daemon over the unix socket or http based APIs.
 
 This project is still in active development. This project will be versioned in accordance with the Docker Remote API. For example, if the current Docker Remote API version is `1.24`, Harbor Master's version will be `1.24.x`.
