@@ -16,7 +16,7 @@ lab.experiment('volumes - list', () => {
 
     harness.client.volumes().list().then(() => {
       Code.expect(scope.isDone()).to.equal(true);
-    }, (err) => {
+    }, () => {
       Code.fail('should be a 200 response');
     }).finally(() => {
       harness.clean();

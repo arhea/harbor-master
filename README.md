@@ -41,6 +41,28 @@ client.info().then((info) => {
 });
 ```
 
+### SSL Configuration
+```javascript
+const docker = require('../index');
+
+const client = docker.Client({
+  host: 'swarm.example.com',
+  port: '2376',
+  tls: {
+    ca: fs.readFileSync('ca.pem'),
+    cert: fs.readFileSync('cert.pem'),
+    key: fs.readFileSync('key.pem'),
+    passphrase: 'supersecretpass'
+  }
+});
+
+client.info().then((info) => {
+  console.log(info);
+}).catch((err) => {
+  console.error(err);
+});
+```
+
 ## API Documentation
 
 ### Containers

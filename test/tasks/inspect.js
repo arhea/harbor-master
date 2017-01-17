@@ -16,7 +16,7 @@ lab.experiment('tasks - list', () => {
 
     harness.client.tasks().inspect('hello-world').then(() => {
       Code.expect(scope.isDone()).to.equal(true);
-    }, (err) => {
+    }, () => {
       Code.fail('should be a 200 response');
     }).finally(() => {
       harness.clean();
