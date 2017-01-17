@@ -271,22 +271,125 @@ client.info().then((info) => {
   + `filters`
 
 ### Networks
-Coming Soon...
+
+#### `client.networks().list(options)` - List Networks
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/list-networks)
+- `options`
+  + `filters` - JSON encoded network list filter.
+
+#### `client.networks().create(model, options)` - Create a Network
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/create-a-network)
+- `model` - a json model representing the network
+- `options`
+
+#### `client.networks().inspect(id, options)` - Inspect a Network
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/inspect-network)
+- `id` - the network id or name
+- `options`
+
+#### `client.networks().remove(id, options)` - Remove a Network
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/remove-a-network)
+- `id` - the network id or name
+- `options`
+
+#### `client.networks().connect(id, options)` - Connect a Container to a Network
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/connect-a-container-to-a-network)
+- `id` - the network id or name
+- `options`
+
+#### `client.networks().disconnect(id, options)` - Disconnect a Container to a Network
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/disconnect-a-container-from-a-network)
+- `id` - the network id or name
+- `options`
 
 ### Nodes
-Coming Soon...
+
+#### `client.nodes().list(options)` - List Nodes
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/list-nodes)
+- `id` - the node id
+- `options`
+  + `filters` - JSON encoded node list filter.
+
+#### `client.nodes().inspect(id, options)` - Inspect a Node
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/inspect-a-node)
+- `id` - the node id
+- `options`
+
+#### `client.nodes().remove(id, options)` - Remove a Node
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/remove-a-node)
+- `id` - the node id
+- `options`
+
+#### `client.nodes().update(id, options)` - Update A Node
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/update-a-node)
+- `id` - the node id
+- `options`
+  + `version` - The version number of the node object being updated. This is required to avoid conflicting writes.
 
 ### Plugins
 Coming Soon...
 
 ### Services
-Coming Soon...
+
+#### `client.services().list(options)` - List Services
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/list-services)
+- `options`
+  + `filters` - a JSON encoded value of the filters (a map[string][]string) to process on the services list.
+
+#### `client.services().create(options, registryAuth)` - Create a Service
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/create-a-service)
+- `options`
+
+#### `client.services().remove(id, options)` - Remove a Service
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/remove-a-service)
+- `options`
+
+#### `client.services().inspect(id, options)` - Inspect a Service
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/inspect-one-or-more-services)
+- `options`
+
+#### `client.services().update(id, options, registryAuth)` - Update a Service
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/update-a-service)
+- `options`
+  + `version` - The version number of the service object being updated. This is required to avoid conflicting writes.
+
 
 ### Swarm
-Coming Soon...
+
+#### `client.swarm().info(options)` - Swarm Info
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/swarm)
+- `options`
+
+#### `client.swarm().init(options)` - Initialize a Swarm
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/initialize-a-new-swarm)
+- `options`
+
+#### `client.swarm().join(options)` - Join a Swarm
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/join-an-existing-swarm)
+- `options`
+
+#### `client.swarm().leave(options)` - Leave a Swarm
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/join-an-existing-swarm)
+- `options`
+  + `force` - Boolean (false/true). Force leave swarm, even if this is the last manager or that it will break the cluster.
+
+#### `client.swarm().update(options)` - Update a Swarm
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/update-a-swarm)
+- `options`
+  + `version` - The version number of the swarm object being updated. This is required to avoid conflicting writes.
+  + `rotateWorkerToken` - Set to true to rotate the worker join token.
+  + `rotateManagerToken` - Set to true to rotate the manager join token.
 
 ### Tasks
-Coming Soon...
+
+#### `client.tasks().list(options)` - List Services
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/list-tasks)
+- `options`
+  + `filters` - a JSON encoded value of the filters (a map[string][]string) to process on the tasks list.
+
+#### `client.tasks().inspect(id, options)` - Inspect a Task
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/inspect-one-or-more-services)
+- `options`
 
 ### Volumes
 Coming Soon...
