@@ -8,11 +8,10 @@ const client = docker.Client({
 
 client.containers().logs('ping', {
   stdout: true, stderr: true, follow: true
-}).on('data', (chunk) => {
+}).then((stream) => {
 
-  const payload = chunk.toString('utf-8', 8);
-  console.log(payload);
+  stream.on('data', (line) => {
+    console.log(line);
+  });
 
-}).on('error', (err) => {
-  console.error(err);
 });
