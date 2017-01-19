@@ -327,7 +327,32 @@ client.info().then((info) => {
   + `version` - The version number of the node object being updated. This is required to avoid conflicting writes.
 
 ### Plugins
-Coming Soon...
+
+#### `client.plugins().list(options)` - List Plugins
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#list-plugins)
+- `options`
+  + `filters` - a JSON encoded value of the filters (a map[string][]string) to process on the services list.
+
+#### `client.plugins().install(options)` - Install a Plugin
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#install-a-plugin)
+- `options`
+  + `name` - Name of the plugin to pull. The name may include a tag or digest. This parameter is required.
+
+#### `client.plugins().inspect(id, options)` - Inspect a Plugin
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#inspect-a-plugin)
+- `options`
+
+#### `client.plugins().enable(id, options)` - Enable a Plugin
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#enable-a-plugin)
+- `options`
+
+#### `client.plugins().disable(id, options)` - Disable a Plugin
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#disable-a-plugin)
+- `options`
+
+#### `client.plugins().remove(id, options)` - Remove a Plugin
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#remove-a-plugin)
+- `options`
 
 ### Services
 
@@ -392,9 +417,50 @@ Coming Soon...
 - `options`
 
 ### Volumes
-Coming Soon...
+
+#### `client.volumes().list(options)` - List Volumes
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#/list-volumes)
+- `options`
+  + `filters` - a JSON encoded value of the filters (a map[string][]string) to process on the volumes list.
+
+#### `client.volumes().create(options, registryAuth)` - Create a Volume
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#create-a-volume)
+- `id` or name of the volume
+- `options`
+
+#### `client.volumes().remove(id, options)` - Remove a Volume
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#remove-a-volume)
+- `id` or name of the volume
+- `options`
+
+#### `client.volumes().inspect(id, options)` - Inspect a Volume
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#inspect-a-volume)
+- `id` or name of the volume
+- `options`
 
 ### Daemon
-Coming Soon...
+
+#### `client.info()` - System Wide Information
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#display-system-wide-information)
+
+#### `client.auth(options)` - Authentication Configuration
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#check-auth-configuration)
+- `options`
+  + `username`
+  + `password`
+  + `serveraddress`
+
+#### `client.version()` - Version
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#show-the-docker-version-information)
+
+#### `client.ping()` - Ping Daemon
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#ping-the-docker-server)
+
+#### `client.events()` - Events Stream
+- [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#monitor-dockers-events)
+- `options`
+  + `since` - Timestamp. Show all events created since timestamp and then stream
+  + `until` - Timestamp. Show events created until given timestamp and stop streaming
+  + `filters` - value of the filters (a map[string][]string) to process on the event list
 
 
