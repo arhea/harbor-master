@@ -65,6 +65,17 @@ client.info().then((info) => {
 
 ## API Documentation
 
+#### `docker.Client(options)` - Harbor Master Client
+- `options`
+  + `host` - the IP address or Hostname of the Docker server
+  + `port` - the port number the Docker server exposes
+  + `socket` - the unix socket
+  + `tls`
+    * `cert` - contents of the server certificate
+    * `key` - contents of the server certificate key
+    * `ca` - contents of the CA certificate
+    * `password` - the certificate password
+
 ### Containers
 
 #### `client.containers().list(options)` - List Containers
