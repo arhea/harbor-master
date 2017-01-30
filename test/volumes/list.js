@@ -14,14 +14,9 @@ lab.experiment('volumes - list', () => {
       .get('/volumes')
       .reply(200, {});
 
-    harness.client.volumes().list().then(() => {
-      Code.expect(scope.isDone()).to.equal(true);
-    }, () => {
-      Code.fail('should be a 200 response');
-    }).finally(() => {
-      harness.clean();
-      done();
-    });
+    const req = harness.client.volumes().list();
+
+    harness.handleSuccess(scope, 200, req, done);
 
   });
 

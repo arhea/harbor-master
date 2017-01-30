@@ -8,6 +8,23 @@ Harbor Master is a Docker Remote API client written in Node. This client is mean
 
 This project is still in active development. This project will be versioned in accordance with the Docker Remote API. For example, if the current Docker Remote API version is `1.24`, Harbor Master's version will be `1.24.x`.
 
+## Table of Contents
+- [Examples](#examples)
+- [Documentation](#documentation)
+  + [Client](#client)
+  + [API](#api)
+    + [Containers](#containers)
+    + [Images](#images)
+    + [Networks](#networks)
+    + [Volumes](#volumes)
+    + [Secrets](#secrets)
+    + [Swarm](#swarm)
+    + [Nodes](#nodes)
+    + [Services](#services)
+    + [Tasks](#task)
+    + [Plugins](#plugins)
+    + [Systems](#system)
+
 ## Examples
 
 ### Unix Socket Example

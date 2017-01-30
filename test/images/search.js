@@ -6,15 +6,18 @@ const harness = require('../harness');
 
 const lab     = exports.lab = Lab.script();
 
-lab.experiment('volumes - inspect', () => {
+lab.experiment('images - search', () => {
 
   lab.test('default parameters', (done) => {
 
     const scope = harness.mock()
-      .get('/volumes/hello-world')
+      .get('/images/search')
+      .query({ term: 'hello-world' })
       .reply(200, {});
 
-    const req = harness.client.volumes().inspect('hello-world');
+    const req = harness.client.images().search({
+      term: 'hello-world'
+    });
 
     harness.handleSuccess(scope, 200, req, done);
 

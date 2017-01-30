@@ -14,14 +14,9 @@ lab.experiment('tasks - list', () => {
       .get('/tasks')
       .reply(200, {});
 
-    harness.client.tasks().list().then(() => {
-      Code.expect(scope.isDone()).to.equal(true);
-    }, () => {
-      Code.fail('should be a 200 response');
-    }).finally(() => {
-      harness.clean();
-      done();
-    });
+    const req = harness.client.tasks().list();
+
+    harness.handleSuccess(scope, 200, req, done);
 
   });
 

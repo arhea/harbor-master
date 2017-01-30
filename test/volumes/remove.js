@@ -14,14 +14,9 @@ lab.experiment('volumes - remove', () => {
       .delete('/volumes/hello-world')
       .reply(204, {});
 
-    harness.client.volumes().remove('hello-world').then(() => {
-      Code.expect(scope.isDone()).to.equal(true);
-    }, () => {
-      Code.fail('should be a 204 response');
-    }).finally(() => {
-      harness.clean();
-      done();
-    });
+    const req = harness.client.volumes().remove('hello-world');
+
+    harness.handleSuccess(scope, 204, req, done);
 
   });
 

@@ -16,14 +16,9 @@ lab.experiment('volumes - create', () => {
 
     const data = {};
 
-    harness.client.volumes().create(data).then(() => {
-      Code.expect(scope.isDone()).to.equal(true);
-    }, () => {
-      Code.fail('should be a 201 response');
-    }).finally(() => {
-      harness.clean();
-      done();
-    });
+    const req = harness.client.volumes().create(data);
+
+    harness.handleSuccess(scope, 201, req, done);
 
   });
 
