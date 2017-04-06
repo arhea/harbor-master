@@ -6,7 +6,9 @@
     "docker",
     "swarm",
     "docker-remote",
-    "node-docker"
+    "node-docker",
+    "containers",
+    "node.js"
   ],
   "main": "index.js",
   "files": [
