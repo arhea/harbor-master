@@ -13,14 +13,16 @@ const client = docker.Client({
   }
 });
 
+/* jshint ignore:start */
 const model = {
-  "Availability": "active",
-  "Name": "swarm-worker-1",
-  "Role": "worker",
-  "Labels": {
-    "foo": "bar"
+  'Availability': 'active',
+  'Name': 'swarm-worker-1',
+  'Role': 'worker',
+  'Labels': {
+    'foo': 'bar'
   }
 };
+/* jshint ignore:end */
 
 client.nodes().update('msw94spas1h2613h0q2ncw594', model, { version: 69 }).then(() => {
   console.log('it worked!');
