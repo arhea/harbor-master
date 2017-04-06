@@ -22,10 +22,11 @@ const model = {
     'foo': 'bar'
   }
 };
-/* jshint ignore:end */
 
 client.nodes().update('msw94spas1h2613h0q2ncw594', model, { version: 69 }).then(() => {
   console.log('it worked!');
 }).catch((err) => {
   console.error(err.body);
 });
+
+/* jshint ignore:end */
