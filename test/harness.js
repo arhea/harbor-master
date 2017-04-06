@@ -12,7 +12,7 @@ module.exports.options = {
 module.exports.client = docker.Client(module.exports.options);
 
 module.exports.mock = () => {
-  return nock(`http://${module.exports.options.host}:${module.exports.options.port}/v1.26`);
+  return nock(`http://${module.exports.options.host}:${module.exports.options.port}/v1.27`);
 };
 
 module.exports.clean = () => {
