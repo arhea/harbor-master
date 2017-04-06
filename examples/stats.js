@@ -12,6 +12,7 @@ client.containers().stats('ping').then((emitter) => {
     data = JSON.parse(data);
     //console.log(data);
 
+    /* jshint ignore:start */
     if(data && data.memory_stats) {
       const mem = (data.memory_stats.usage / Math.pow(1024, 2)) * (Math.pow(2, 20) / Math.pow(10, 6)).toFixed(2);
       const memUsage = ((data.memory_stats.usage / data.memory_stats.limit) * 100).toFixed(2);
@@ -27,6 +28,7 @@ client.containers().stats('ping').then((emitter) => {
       console.log('CPU Usage:', cpuPercent + '%');
       console.log('Network Usage:', networkIn + 'MB / ' + networkOut + 'MB');
     }
+    /* jshint ignore:end */
 
   });
 });
