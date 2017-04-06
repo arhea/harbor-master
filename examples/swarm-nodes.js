@@ -13,14 +13,15 @@ const client = docker.Client({
   }
 });
 
-/* jshint ignore:start */
 const model = {
+  /* jshint ignore:start */
   'Availability': 'active',
   'Name': 'swarm-worker-1',
   'Role': 'worker',
   'Labels': {
     'foo': 'bar'
   }
+  /* jshint ignore:end */
 };
 
 client.nodes().update('msw94spas1h2613h0q2ncw594', model, { version: 69 }).then(() => {
@@ -28,5 +29,3 @@ client.nodes().update('msw94spas1h2613h0q2ncw594', model, { version: 69 }).then(
 }).catch((err) => {
   console.error(err.body);
 });
-
-/* jshint ignore:end */
