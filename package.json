@@ -1,7 +1,7 @@
 {
   "name": "harbor-master",
   "version": "1.26.2",
-  "description": "Harbor Master is a Docker Remote API client written in Node",
+  "description": "Harbor Master is a Docker Remote API client written in Node.js",
   "keywords": [
     "docker",
     "swarm",
