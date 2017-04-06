@@ -96,7 +96,7 @@ client.info().then((info) => {
 ### Containers
 
 #### `client.containers().list(options)` - List Containers
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ContainerList)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ContainerList)
 - `options`
   + `all` - *default: `false`* Show all containers. Only running containers are shown by default.
   + `limit` - Show limit last created containers, include non-running ones.
@@ -106,25 +106,25 @@ client.info().then((info) => {
   + `filters` - `map[string][]string` to process on the containers list
 
 #### `client.containers().create(model, options)` - Create Container
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ContainerCreate)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ContainerCreate)
 - `model` - the JSON model that the Docker API consumes
 - `options`
   + `name` - Assign the specified name to the container. Must match `/?[a-zA-Z0-9_-]+`.
 
 #### `client.containers().inspect(name, options)` - Inspect Container
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ContainerInspect)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ContainerInspect)
 - `name` - the name or id of the container
 - `options`
   + `size` - *default: `false`* Show the containers sizes
 
 #### `client.containers().top(name)` - List Processes Running Inside a Container
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ContainerTop)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ContainerTop)
 - `name` - the name or id of the container
 - `options`
   + `ps_args` - `ps` arguments to use (e.g., aux), defaults to `-ef`
 
 #### `client.containers().logs(name, options)` - Container Logs
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ContainerLogs)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ContainerLogs)
 - `name` - the name or id of the container
 - `options`
   + `details` - Show extra details provided to logs. *default: `false`*
@@ -136,66 +136,66 @@ client.info().then((info) => {
   + `tail` - Output specified number of lines at the end of logs: all or <number> *default: `all`*
 
 #### `client.containers().changes(name, options)` - Inspect Container Filesystem Changes
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ContainerChanges)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ContainerChanges)
 - `name` - the name or id of the container
 - `options`
 
 #### `client.containers().export(name, options)` - Export a Container
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ContainerExport)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ContainerExport)
 - `name` - the name or id of the container
 - `options`
 
 #### `client.containers().stats(name, options)` - Export a Container
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ContainerStats)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ContainerStats)
 - `name` - the name or id of the container
 - `options`
   + `stream` - stream statistics *default: `true`*
 
 #### `client.containers().resize(name, options)` - Resize a container TTY
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ContainerResize)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ContainerResize)
 - `name` - the name or id of the container
 - `options`
   + `h` - height
   + `w` - width
 
 #### `client.containers().start(name, options)` - Start a Container
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ContainerStart)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ContainerStart)
 - `name` - the name or id of the container
 - `options`
   + `detachKeys` - Override the key sequence for detaching a container. Format is a single character.
 
 #### `client.containers().stop(name, options)` - Stop a Container
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ContainerStop)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ContainerStop)
 - `name` - the name or id of the container
 - `options`
   + `t` - number of seconds to wait before killing the container
 
 #### `client.containers().restart(name, options)` - Restart a Container
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ContainerRestart)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ContainerRestart)
 - `name` - the name or id of the container
 - `options`
   + `t` - number of seconds to wait before killing the container
 
 #### `client.containers().kill(name, options)` - Kill a Container
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ContainerKill)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ContainerKill)
 - `name` - the name or id of the container
 - `options`
   + `signal` - Signal to send to the container: integer or string like SIGINT. When not set, SIGKILL is assumed and the call waits for the container to exit.
 
 #### `client.containers().update(name, model, options)` - Update a Container
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ContainerUpdate)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ContainerUpdate)
 - `name` - the name or id of the container
 - `model` - the JSON model that the Docker API consumes
 - `options`
 
 #### `client.containers().rename(name, options)` - Rename a Container
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ContainerRename)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ContainerRename)
 - `name` - the name or id of the container
 - `options`
   + `name` - new name for the container
 
 #### `client.containers().pause(name)` - Pause a Container
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ContainerPause)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ContainerPause)
 - `name` - the name or id of the container
 - `options`
 
@@ -216,12 +216,12 @@ client.info().then((info) => {
   + `stderr` - return stderr *default: `false`*
 
 #### `client.containers().unpause(name, options)` - Wait a Container
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ContainerPause)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ContainerPause)
 - `name` - the name or id of the container
 - `options`
 
 #### `client.containers().remove(name, options)` - Wait a Container
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ContainerDelete)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ContainerDelete)
 - `name` - the name or id of the container
 - `options`
   + `v` - Remove the volumes associated to the container *default: `false`*
@@ -230,12 +230,12 @@ client.info().then((info) => {
 ### Images
 
 #### `client.images().list(options)` - Wait a Container
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ImageList)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ImageList)
 - `options`
   + `filters` - `map[string][]string` to process on the images list
 
 #### `client.images().build(stream, options, registryAuth)` - Build an Image From a Dockerfile
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ImageBuild)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ImageBuild)
 - `options`
   +
 - `registryAuth`
@@ -244,7 +244,7 @@ client.info().then((info) => {
   + `serveraddress`
 
 #### `client.images().create(options, registryAuth)` - Create Image
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ImageCreate)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ImageCreate)
 - `options`
   + `fromImage`
   + `fromSrc`
@@ -257,17 +257,17 @@ client.info().then((info) => {
   + `serveraddress`
 
 #### `client.images().inspect(name, options)` - Inspect an Image
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ImageInspect)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ImageInspect)
 - `name` - the name or id of the image
 - `options`
 
 #### `client.images().history(name, options)` - History of an Image
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ImageHistory)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ImageHistory)
 - `name` - the name or id of the image
 - `options`
 
 #### `client.images().push(name, options, registryAuth)` - Push an Image on the Registry
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ImagePush)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ImagePush)
 - `name` - the name or id of the image
 - `options`
   + `tag`
@@ -277,21 +277,21 @@ client.info().then((info) => {
   + `serveraddress`
 
 #### `client.images().tag(name, options)` - Tag an Image
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ImageTag)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ImageTag)
 - `name` - the name or id of the image
 - `options`
   + `repo`
   + `tag`
 
 #### `client.images().remove(name, options)` - Remove of Image
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ImageDelete)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ImageDelete)
 - `name` - the name or id of the image
 - `options`
   + `repo`
   + `tag`
 
 #### `client.images().search(options)` - Search Images
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ImageSearch)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ImageSearch)
 - `name` - the name or id of the image
 - `options`
   + `term`
@@ -301,55 +301,55 @@ client.info().then((info) => {
 ### Networks
 
 #### `client.networks().list(options)` - List Networks
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/NetworkList)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/NetworkList)
 - `options`
   + `filters` - JSON encoded network list filter.
 
 #### `client.networks().create(model, options)` - Create a Network
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/NetworkCreate)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/NetworkCreate)
 - `model` - a json model representing the network
 - `options`
 
 #### `client.networks().inspect(id, options)` - Inspect a Network
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/NetworkInspect)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/NetworkInspect)
 - `id` - the network id or name
 - `options`
 
 #### `client.networks().remove(id, options)` - Remove a Network
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/NetworkDelete)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/NetworkDelete)
 - `id` - the network id or name
 - `options`
 
 #### `client.networks().connect(id, options)` - Connect a Container to a Network
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/NetworkConnect)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/NetworkConnect)
 - `id` - the network id or name
 - `options`
 
 #### `client.networks().disconnect(id, options)` - Disconnect a Container to a Network
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/NetworkDisconnect)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/NetworkDisconnect)
 - `id` - the network id or name
 - `options`
 
 ### Nodes
 
 #### `client.nodes().list(options)` - List Nodes
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/NetworkDisconnect)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/NetworkDisconnect)
 - `id` - the node id
 - `options`
   + `filters` - JSON encoded node list filter.
 
 #### `client.nodes().inspect(id, options)` - Inspect a Node
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/NodeInspect)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/NodeInspect)
 - `id` - the node id
 - `options`
 
 #### `client.nodes().remove(id, options)` - Remove a Node
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/NodeDelete)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/NodeDelete)
 - `id` - the node id
 - `options`
 
 #### `client.nodes().update(id, options)` - Update A Node
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/NodeUpdate)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/NodeUpdate)
 - `id` - the node id
 - `options`
   + `version` - The version number of the node object being updated. This is required to avoid conflicting writes.
@@ -404,7 +404,7 @@ client.info().then((info) => {
 - `options`
 
 #### `client.services().logs(id, options)` - Get Service Logs
-- [Docker Documentation](https://docs.docker.com/engine/api/v1.25/#operation/ServiceLogs)
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.26/#operation/ServiceLogs)
 - `id` - id or name of the service
 - `options`
   + `details` - boolean, Show extra details provided to logs.
