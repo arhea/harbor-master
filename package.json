@@ -32,6 +32,7 @@
     "node": ">= 4"
   },
   "dependencies": {
+    "aws-sdk": "^2.40.0",
     "bluebird": "^3.4.7",
     "joi": "^10.2.0",
     "lodash": "^4.17.4",
