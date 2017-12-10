@@ -94,6 +94,36 @@ client.info().then((info) => {
     * `ca` - contents of the CA certificate
     * `password` - the certificate password
 
+
+### Configs
+
+#### `client.configs().list(options)` - List Configs
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.32/#operation/ConfigList)
+- `options`
+  + `filters` - `map[string][]string` to process on the configs list
+
+#### `client.configs().create(model, options)` - Create Config
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.32/#operation/ConfigCreate)
+- `model` - the JSON model that the Docker API consumes
+- `options`
+
+#### `client.configs().inspect(id, options)` - Inspect Config
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.32/#operation/ConfigInspect)
+- `id` - the id or name of the config
+- `options`
+
+#### `client.configs().remove(id, options)` - Remove Config
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.32/#operation/ConfigDelete)
+- `name` - the id of the config
+- `options`
+
+#### `client.configs().update(id, model, options)` - Update Config
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.32/#operation/ConfigUpdate)
+- `id` - the id or name of the config
+- `model` - the JSON model that the Docker API consumes
+- `options`
+  + `version` - The version number of the config object being updated. This is required to avoid conflicting writes.
+
 ### Containers
 
 #### `client.containers().list(options)` - List Containers
@@ -481,6 +511,35 @@ client.info().then((info) => {
 - [Docker Documentation](https://docs.docker.com/engine/reference/api/docker_remote_api_v1.24/#inspect-a-volume)
 - `id` or name of the volume
 - `options`
+
+### Secrets
+
+#### `client.secrets().list(options)` - List Secret
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.32/#operation/SecretList)
+- `options`
+  + `filters` - `map[string][]string` to process on the secrets list
+
+#### `client.secrets().create(model, options)` - Create Secret
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.32/#operation/SecretCreate)
+- `model` - the JSON model that the Docker API consumes
+- `options`
+
+#### `client.secrets().inspect(id, options)` - Inspect Secret
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.32/#operation/SecretInspect)
+- `id` - the id or name of the secret
+- `options`
+
+#### `client.secrets().remove(id, options)` - Remove Secret
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.32/#operation/SecretDelete)
+- `name` - the id of the secret
+- `options`
+
+#### `client.secrets().update(id, model, options)` - Update Secret
+- [Docker Documentation](https://docs.docker.com/engine/api/v1.32/#operation/SecretUpdate)
+- `id` - the id or name of the secret
+- `model` - the JSON model that the Docker API consumes
+- `options`
+  + `version` - The version number of the secret object being updated. This is required to avoid conflicting writes.
 
 ### Daemon
 
