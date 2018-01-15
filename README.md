@@ -30,7 +30,7 @@ This project is still in active development. This project will be versioned in a
 
 ### Unix Socket Example
 ```javascript
-const docker = require('../index');
+const docker = require('harbor-master');
 
 const client = docker.Client({
   socket: '/var/run/docker.sock'
@@ -45,7 +45,7 @@ client.info().then((info) => {
 
 ### Remote Host Example
 ```javascript
-const docker = require('../index');
+const docker = require('harbor-master');
 
 const client = docker.Client({
   host: 'swarm.example.com',
@@ -61,7 +61,7 @@ client.info().then((info) => {
 
 ### SSL Configuration
 ```javascript
-const docker = require('../index');
+const docker = require('harbor-master');
 
 const client = docker.Client({
   host: 'swarm.example.com',
