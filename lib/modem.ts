@@ -44,11 +44,11 @@ export default class Modem {
     return this.http(options);
   }
 
-  stream(method, path, params, headers) {
+  stream(options, cb?) {
 
     return new Promise((resolve) => {
       const dest = new EventEmitter();
-      const src = this._request(method, path, params, headers);
+      const src = this._request(options, cb);
 
       src.on('data', function (chunk) {
         const payload = chunk.toString('utf-8').trim();
@@ -111,7 +111,7 @@ export default class Modem {
     });
   }
 
-  _request(options, cb) {
+  _request(options, cb?) {
 
     options.headers = options.headers || {};
 

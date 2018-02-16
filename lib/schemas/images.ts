@@ -40,6 +40,10 @@ export const create = {
   })
 };
 
+export const history = {
+  options: Joi.object()
+};
+
 export const push = {
   options: Joi.object().keys({
     tag: Joi.string()
@@ -88,4 +92,8 @@ export const commit = {
     pause: Joi.boolean(),
     changes: Joi.string(),
   })
+};
+
+export const _export = {
+  options: Joi.object()
 };

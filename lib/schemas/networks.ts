@@ -17,3 +17,7 @@ export const inspect = {
 export const remove = {
   options: Joi.object()
 };
+
+export const connect = {
+  options: Joi.object()
+};

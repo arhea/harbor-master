@@ -245,7 +245,7 @@ export default class ImagesClient {
 
     options = options || {};
 
-    return self.docker._validate(options, schemas.export.options).then((params) => {
+    return self.docker._validate(options, schemas._export.options).then((params) => {
       return self.docker.modem.download({
         method: 'GET',
         url: `/images/${id}/export`,

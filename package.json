@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "compile": "tsc",
-    "test": "lab dist/test --timeout 1000 --assert code",
+    "test": "tsc && lab dist/test --timeout 1000 --assert code",
     "lint": "jshint ."
   },
   "author": "Alex Rhea <alex.rhea@gmail.com>",
@@ -38,7 +38,8 @@
     "bluebird": "^3.4.7",
     "joi": "^10.2.0",
     "lodash": "^4.17.5",
-    "request": "^2.79.0"
+    "request": "^2.79.0",
+    "typescript": "^2.7.2"
   },
   "devDependencies": {
     "code": "^4.0.0",

@@ -12,7 +12,7 @@ client.containers().stats('ping').then((emitter) => {
 
     /* jshint ignore:start */
     if (data && data.memory_stats) {
-      const mem = (data.memory_stats.usage / Math.pow(1024, 2)) * (Math.pow(2, 20) / Math.pow(10, 6)).toFixed(2);
+      const mem = (data.memory_stats.usage / Math.pow(1024, 2)) * Number((Math.pow(2, 20) / Math.pow(10, 6)).toFixed(2));
       const memUsage = ((data.memory_stats.usage / data.memory_stats.limit) * 100).toFixed(2);
 
       let cpuPercent: any = (data.cpu_stats.cpu_usage.total_usage / data.cpu_stats.system_cpu_usage);
