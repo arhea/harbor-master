@@ -34,13 +34,13 @@
   "dependencies": {
     "bluebird": "^3.4.7",
     "joi": "^10.2.0",
-    "lodash": "^4.17.4",
-    "request": "^2.79.0"
+    "lodash": "^4.17.10",
+    "request": "^2.86.0"
   },
   "devDependencies": {
     "code": "^4.0.0",
     "jshint": "^2.9.4",
     "lab": "^11.2.2",
-    "nock": "^9.0.2"
+    "nock": "^9.2.6"
   }
 }
