@@ -1,5 +1,6 @@
 'use strict';
 
+const Code    = require('code');
 const Lab     = require('lab');
 const harness = require('../harness');
 
@@ -11,11 +12,17 @@ lab.experiment('images - list', () => {
 
     const scope = harness.mock()
       .get('/images/json')
+      .query({all: false, digest: false})
       .reply(200, {});
 
-    const req = harness.client.images().list();
-
-    harness.handleSuccess(scope, 200, req, done);
+    harness.client.images().list().then(() => {
+      Code.expect(scope.isDone()).to.equal(true);
+    }, () => {
+      Code.fail('should be a 200 response');
+    }).finally(() => {
+      harness.clean();
+      done();
+    });
 
   });
 
