@@ -1,7 +1,7 @@
 {
-  "name": "harbor-master",
-  "version": "1.32.1",
-  "description": "Harbor Master is a Docker Remote API client written in Node.js",
+  "name": "harbor-master-wb",
+  "version": "1.0.1",
+  "description": "Harbor Master is a Docker Remote API client written in Node.js; the WB version is for Without Bug",
   "keywords": [
     "docker",
     "swarm",
@@ -19,13 +19,13 @@
     "test": "lab --timeout 1000 --assert code",
     "lint": "jshint ."
   },
-  "author": "Alex Rhea <alex.rhea@gmail.com>",
+  "author": "Shoxxdj <shoxx@shoxxdj.fr>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/arhea/harbor-master.git"
+    "url": "https://github.com/shoxxdj/harbor-master-wb.git"
   },
   "bugs": {
-    "url": "http://github.com/arhea/harbor-master/issues"
+    "url": "https://github.com/shoxxdj/harbor-master-wb/issues"
   },
   "license": "Apache-2.0",
   "engines": {
