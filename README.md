@@ -22,7 +22,7 @@ This project is still in active development. This project will be versioned in a
     + [Swarm](#swarm)
     + [Nodes](#nodes)
     + [Services](#services)
-    + [Tasks](#task)
+    + [Tasks](#tasks)
     + [Plugins](#plugins)
     + [Systems](#system)
 
